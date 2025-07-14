@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Fran</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Fredoka One', cursive;
+      background: linear-gradient(135deg, #fff0f5 0%, #fdf6e3 100%);
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(120deg, #ff8a8a, #ffc3a0);
+      padding: 4rem 1rem 7rem;
+      text-align: center;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      animation: slideIn 1.2s ease forwards;
+    }
+    @keyframes slideIn {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: #fff;
+      animation: fadeInDown 1.5s ease forwards;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #fff8f8;
+      animation: fadeInDown 1.7s ease forwards;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .container {
+      max-width: 1000px;
+      margin: -5rem auto 3rem;
+      padding: 0 1rem;
+      position: relative;
+    }
+    .section {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      background: #ffe0e9;
+      color: #d1005b;
+      padding: 0.5rem 1rem;
+      border-left: 10px solid #ff6b81;
+      border-radius: 10px 0 0 10px;
+      font-size: 1.8rem;
+    }
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill-item {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      border-left: 5px solid #d1005b;
+      transition: transform 0.3s;
+    }
+    .skill-item:hover {
+      transform: translateY(-5px);
+    }
+    .skill-item h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: #d1005b;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .project-card {
+      background: #fff5f7;
+      border: 2px dashed #ff8a8a;
+      border-radius: 15px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+    .project-card a {
+      text-decoration: none;
+      color: #d1005b;
+      font-size: 1.1rem;
+    }
+    footer {
+      background: #ffc3a0;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 1rem;
+      font-weight: lighter;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".section");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+</head>
+<body>
+<header>
+  <h1>Francisca B.</h1>
+  <p>Educadora Tecnológica | Maker | Innovadora en Aula</p>
+</header>
+<div class="container">
+  <section class="section">
+    <h2>Trabajo Actual</h2>
+    <ul>
+      <li>Aula CREA (2025)</li>
+      <li>Ayudantía de investigación Fondecyt (2025)</li>
+      <li>Ayudantía Matematización Inicial I (2025)</li>
+    </ul>
+  </section>
+  <section class="section">
+    <h2>Proyectos</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <a href="https://codepen.io/FranCoiro" target="_blank">🌟 Ver todos mis proyectos en Codepen</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Experiencia previa</h2>
+    <ul>
+      <li>Ayudante MAT1191 – 2023 y 2024</li>
+      <li>Ayudante EBA285 – 2023</li>
+      <li>Ayudante Proyecto de Escritura Académica – 2023</li>
+      <li>Ayudante investigación Fondecyt 1123023 – 2024</li>
+    </ul>
+  </section>
+  <section class="section">
+    <h2>Seminarios y Congresos</h2>
+    <ul>
+      <li>INMOVA – IMA (2022)</li>
+      <li>Congreso SOCHIL (2023)</li>
+      <li>Feria de Matemáticas EBA PUCV – Proyecto “Espacio tecnológico” (2023)</li>
+      <li>Seminario Internacional PUCV – Escritura Académica (2023)</li>
+      <li>RELME 38 Colombia – Percepciones de profesores en formación sobre tecnologías en matemática (2025)</li>
+    </ul>
+  </section>
+  <section class="section">
+    <h2>Habilidades y herramientas</h2>
+    <div class="skills-list">
+      <div class="skill-item">
+        <h3>Lenguajes</h3>
+        <p>HTML, CSS, Java, Python, R, Scratch</p>
+      </div>
+      <div class="skill-item">
+        <h3>Herramientas</h3>
+        <p>Blender, Illustrator, Photoshop, Procreate, Office, Atlas Ti, n8n</p>
+      </div>
+      <div class="skill-item">
+        <h3>Técnicas</h3>
+        <p>Diseño e impresión 3D, sublimación, confección en textil y madera</p>
+      </div>
+      <div class="skill-item">
+        <h3>Docencia</h3>
+        <p>Curso de programación y diseño 3D impartido entre 2019–2020</p>
+      </div>
+    </div>
+  </section>
+</div>
+<footer>
+  © 2025 Francisca B. — Portafolio Personal
+</footer>
+</body>
+</html>
