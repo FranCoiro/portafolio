@@ -131,6 +131,17 @@
         });
       }, { threshold: 0.15 });
       sections.forEach(section => observer.observe(section));
+
+      const protectedLink = document.getElementById("protected-link");
+      protectedLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        const clave = prompt("Ingrese la clave para acceder al documento:");
+        if (clave === "robotica2025") {
+          window.open("https://docs.google.com/document/d/1jDCEfrmUHzerCRU8AB_C4ZVN1-qku851sNieRbn95H4/edit?usp=sharing", "_blank");
+        } else {
+          alert("Clave incorrecta. Intenta nuevamente.");
+        }
+      });
     });
   </script>
 </head>
@@ -159,76 +170,9 @@
   <section class="section">
     <h2>Trabajos en curso</h2>
     <ul>
-      <li><a href="#" onclick="prompt('Clave requerida:', '')">🔒 Propuesta Robótica Educativa</a></li>
+      <li><a href="#" id="protected-link">🔒 Propuesta Robótica Educativa (acceso protegido)</a></li>
     </ul>
   </section>
-  <section class="section">
-    <h2>Proyectos</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <a href="https://codepen.io/FranCoiro" target="_blank">🌟 Ver todos mis proyectos en Codepen</a>
-      </div>
-      <div class="project-card">
-        <a href="https://www.researchgate.net/publication/341109847_Pre-robot_an_open-source_educational_robotics_platform_for_preschoolers" target="_blank">🤖 PreRobot (2020)</a>
-      </div>
-      <div class="project-card">
-        <a href="#">📚 Aula CREA (2025)</a>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <h2>Experiencia previa</h2>
-    <ul>
-      <li>Ayudante investigación Fondecyt 1123023 – 2024</li>
-      <li>Ayudante MAT1191 – 2023 y 2024</li>
-      <li>Ayudante EBA285 – 2023</li>
-      <li>Ayudante Proyecto de Escritura Académica – 2023</li>
-    </ul>
-  </section>
-  <section class="section">
-    <h2>Seminarios y Congresos</h2>
-    <ul>
-      <li>RELME 38 Colombia – Tecnologías en matemática (2025)</li>
-      <li>Seminario Internacional PUCV – Escritura Académica (2023)</li>
-      <li>Feria de Matemáticas EBA PUCV – Proyecto “Espacio tecnológico” (2023)</li>
-      <li>Congreso SOCHIL (2023)</li>
-      <li>INMOVA – IMA (2022)</li>
-    </ul>
-  </section>
-  <section class="section">
-    <h2>Media</h2>
-    <ul>
-      <li><a href="https://www.pucv.cl/pucv/noticias/vida-universitaria/estudiantes-dan-inicio-al-programa-crea-inicia-con-jornada-colaborativa" target="_blank">📸 PUCV Noticia Crea-Inicia</a></li>
-      <li><a href="https://www.instagram.com/p/DLh1ZLdA7li/" target="_blank">📷 Instagram Crea-Inicia</a></li>
-    </ul>
-  </section>
-  <section class="section">
-    <h2>Habilidades y herramientas</h2>
-    <div class="skills-list">
-      <div class="skill-item">
-        <h3>Lenguajes</h3>
-        <p>HTML, CSS, Java, Python, R, Scratch</p>
-      </div>
-      <div class="skill-item">
-        <h3>Herramientas</h3>
-        <p>Blender, Illustrator, Photoshop, Procreate, Office, Atlas Ti, n8n</p>
-      </div>
-      <div class="skill-item">
-        <h3>Técnicas</h3>
-        <p>Diseño e impresión 3D, sublimación, confección en textil y madera</p>
-      </div>
-      <div class="skill-item">
-        <h3>Docencia</h3>
-        <p>Curso de programación y diseño 3D impartido entre 2019–2020</p>
-      </div>
-    </div>
-  </section>
-</div>
-<footer>
-  Contacto: <a href="mailto:francisca.coiro.d@mail.pucv.cl" style="color:white; text-decoration:underline;">francisca.coiro.d@mail.pucv.cl</a><br>
-  © 2025 Francisca Coiro-Díaz — Portafolio Personal
-</footer>
-</body>
-</html>
+
 
 
